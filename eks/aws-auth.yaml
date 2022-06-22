@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system 
 data: 
   mapUsers: | 
-    - userarn: arn:aws:iam::960382207733:user/paulo.pereira
+    - userarn: arn:aws:iam::960382207733:role/crossrole-administrator
       username: paulo.pereira
       groups:
         - system:masters
