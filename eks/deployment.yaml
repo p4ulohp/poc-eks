@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cluste-eks-test-ph-api-deployment
+  name: eks-cluster-inventa-dev
   labels:
-    app: cluste-eks-test-ph-api
+    app: eks-cluster-inventa-dev
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: cluste-eks-test-ph-api
+      app: eks-cluster-inventa-dev
   template:
     metadata:
       labels:
-        app: cluste-eks-test-ph-api
+        app: eks-cluster-inventa-dev
     spec:
       containers:
-      - name: cluste-eks-test-ph-api
-        image: 756188601678.dkr.ecr.us-east-1.amazonaws.com/ecr-teste-ph:latest
+      - name: eks-cluster-inventa-dev
+        image: 960382207733.dkr.ecr.us-east-1.amazonaws.com/ecr-inventa-dev:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
