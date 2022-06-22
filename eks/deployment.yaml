@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-cluster-inventa-dev
+  name: eks-cluster-inventa-dev-api
   labels:
-    app: eks-cluster-inventa-dev
+    app: eks-cluster-inventa-dev-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: eks-cluster-inventa-dev
+      app: eks-cluster-inventa-dev-api
   template:
     metadata:
       labels:
-        app: eks-cluster-inventa-dev
+        app: eks-cluster-inventa-dev-api
     spec:
       containers:
-      - name: eks-cluster-inventa-dev
+      - name: eks-cluster-inventa-dev-api
         image: 960382207733.dkr.ecr.us-east-1.amazonaws.com/ecr-inventa-dev:latest
         imagePullPolicy: Always
         ports:
