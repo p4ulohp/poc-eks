@@ -8,7 +8,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cluste-eks-test-ph-ingress
+  name: eks-cluster-inventa-dev-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
@@ -21,7 +21,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: cluste-eks-test-ph-api-service
+            name: eks-cluster-inventa-dev-service
             port:
               number: 80
   tls:

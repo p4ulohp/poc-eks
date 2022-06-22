@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cluste-eks-test-ph-api-service
+  name: eks-cluster-inventa-dev-service
 spec:
   selector:
-    app: cluste-eks-test-ph-api
+    app: eks-cluster-inventa-dev-api
   ports:
     - protocol: TCP
       port: 80
