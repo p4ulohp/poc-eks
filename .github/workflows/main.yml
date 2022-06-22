@@ -35,14 +35,14 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: 	ecr-teste-ph
+        ECR_REPOSITORY: 	ecr-inventa-dev
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
         docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
 
     - name: Update kube config
-      run: aws eks update-kubeconfig --name cluste-eks-test-ph --region us-east-1
+      run: aws eks update-kubeconfig --name eks-cluster-inventa-dev --region us-east-1
 
     - name: Deploy image to Amazon EKS
       run: |
